@@ -2,14 +2,16 @@ const express = require('express')
 const app = express()
 const db=require('./db');
 //const person=require('./models/person');
-const per=require('./routes/personRoutes');
+//const per=require('./routes/personRoutes');
 //const men=require('./routes/menuRoutes');
 
-app.use('/person',per);
+//app.use('/person',per);
 //app.use('/menu',men);
 
 const bodyparser=require('body-parser');
 app.use(bodyparser.json());
+const personRoutes=require('./routes/personRoutes');
+app.use('/person',personRoutes);
 
 //const person=require('./models/person');
 //const MenuItem=require('./models/menu');
